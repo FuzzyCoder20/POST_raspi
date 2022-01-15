@@ -21,9 +21,16 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 from django.views.static import serve
 
+
+# admin.site.site_header="POST"
+admin.site.site_title="POST your personalized online terminal"
+# admin.site.index_title="Welcome to your personal cloud storage"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home),
+    # path('',views.home),
+    url(r'^', admin.site.urls),
+
     # url(r'^download/(?P<path>.*)$',serve,{'document_root':settings.MEDIA_ROOT}),
     url(r'^download/(?P<path>.*)$',serve,{'document_root':settings.MEDIA_ROOT}),
 

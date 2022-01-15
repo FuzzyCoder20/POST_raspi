@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,12 +26,13 @@ SECRET_KEY = '%y7a%pl10cuu#7f5kx08sfyyj((-)1lhx2zz^$1(-ki@^)2vcx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.31.9', 'localhost', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,5 +127,23 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,"static")]
 
 
 MEDIA_URL="/media/"
-MEDIA_ROOT=os.path.join(BASE_DIR,'D:\college stuff\TY project\gdrive clone\python-pyrebase\downloads')
+MEDIA_ROOT=os.path.join(BASE_DIR,'D:\college stuff\TY project\gdrive clone\python-pyrebase\downloads','D:\college stuff\TY project\gdrive clone\python-pyrebase\downloads\we')
 
+JAZZMIN_SETTINGS = {
+      "site_title": "POST- your personalized storage platform",
+
+    # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+    "site_header": "POST",
+
+    
+
+    
+
+
+
+}
+
+JAZZMIN_UI_TWEAKS = {
+    
+    "theme": "cosmo",
+}
